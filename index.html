@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Accesorios Fercho</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0f0f0f;
+    color:#fff;
+}
+
+header{
+    background:#0b102f;
+    text-align:center;
+    padding:40px 20px;
+}
+
+header h1{
+    color:#3fa9f5;
+    font-size:2.5em;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.producto{
+    background:#1e1e1e;
+    margin-bottom:20px;
+    padding:20px;
+    border-left:5px solid #3fa9f5;
+    border-radius:10px;
+}
+
+.producto h2{
+    color:#3fa9f5;
+}
+
+.precio{
+    font-size:1.2em;
+    margin:10px 0;
+}
+
+button{
+    background:#3fa9f5;
+    border:none;
+    padding:10px 20px;
+    cursor:pointer;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#1f7fd1;
+    color:#fff;
+}
+
+.carrito{
+    background:#141414;
+    padding:20px;
+    border-radius:10px;
+    margin-top:30px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#000;
+    color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Accesorios Fercho</h1>
+<p>Compra rápido y fácil por WhatsApp 💻📲</p>
+</header>
+
+<div class="container">
+
+<div class="producto">
+<h2>Teclado Mecánico RGB</h2>
+<p class="precio">Q399</p>
+<button onclick="agregar('Teclado Mecánico RGB',399)">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+<h2>Mouse Gamer</h2>
+<p class="precio">Q249</p>
+<button onclick="agregar('Mouse Gamer',249)">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+<h2>Auriculares con Micrófono</h2>
+<p class="precio">Q299</p>
+<button onclick="agregar('Auriculares con Micrófono',299)">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+<h2>Webcam HD</h2>
+<p class="precio">Q199</p>
+<button onclick="agregar('Webcam HD',199)">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+<h2>Base Enfriadora Laptop</h2>
+<p class="precio">Q179</p>
+<button onclick="agregar('Base Enfriadora Laptop',179)">Agregar al carrito</button>
+</div>
+
+<div class="producto">
+<h2>Memoria USB</h2>
+<p class="precio">Q79</p>
+<button onclick="agregar('Memoria USB',79)">Agregar al carrito</button>
+</div>
+
+<div class="carrito">
+<h2>🛒 Carrito</h2>
+<div id="lista"></div>
+<p id="total">Total: Q0</p>
+<button onclick="comprar()">Comprar por WhatsApp</button>
+</div>
+
+</div>
+
+<footer>
+© 2026 Accesorios Fercho | Venta directa y segura 🔵⚪⚫
+</footer>
+
+<script>
+let carrito=[];
+let total=0;
+
+function agregar(nombre,precio){
+    carrito.push({nombre,precio});
+    total+=precio;
+    mostrar();
+}
+
+function mostrar(){
+    let lista=document.getElementById("lista");
+    lista.innerHTML="";
+    carrito.forEach(p=>{
+        lista.innerHTML+=`<p>✔ ${p.nombre} - Q${p.precio}</p>`;
+    });
+    document.getElementById("total").innerText="Total: Q"+total;
+}
+
+function comprar(){
+    let mensaje="Hola, quiero comprar:%0A";
+    carrito.forEach(p=>{
+        mensaje+=`- ${p.nombre} Q${p.precio}%0A`;
+    });
+    mensaje+=`Total: Q${total}`;
+
+    // 🔴 CAMBIA ESTE NÚMERO POR EL TUYO
+    let numero="50212345678";
+
+    window.open(`https://wa.me/${numero}?text=${mensaje}`,"_blank");
+}
+</script>
+
+</body>
+</html>
