@@ -1,203 +1,172 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Accesorios Fercho</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Accesorios Fercho</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(180deg, #000000, #1b1b1b);
-            color: #ffffff;
-        }
+<style>
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0f0f0f;
+    color:#fff;
+}
 
-        header {
-            text-align: center;
-            padding: 50px 20px;
-            background: #0b102f;
-        }
+header{
+    background:#0b102f;
+    text-align:center;
+    padding:40px 20px;
+}
 
-        header h1 {
-            color: #3fa9f5;
-            font-size: 2.8em;
-        }
+header h1{
+    color:#3fa9f5;
+    font-size:2.5em;
+}
 
-        header p {
-            color: #d0d0d0;
-        }
+.container{
+    width:90%;
+    max-width:900px;
+    margin:auto;
+    padding:30px 0;
+}
 
-        .container {
-            width: 90%;
-            max-width: 900px;
-            margin: auto;
-            padding: 30px 0;
-        }
+.producto{
+    background:#1e1e1e;
+    margin-bottom:20px;
+    padding:20px;
+    border-left:5px solid #3fa9f5;
+    border-radius:10px;
+}
 
-        .producto {
-            background: #1f1f1f;
-            margin-bottom: 30px;
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 6px solid #3fa9f5;
-        }
+.producto h2{
+    color:#3fa9f5;
+}
 
-        .producto img {
-            width: 100%;
-            max-height: 250px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
+.precio{
+    font-size:1.2em;
+    margin:10px 0;
+}
 
-        .producto h2 {
-            color: #3fa9f5;
-        }
+button{
+    background:#3fa9f5;
+    border:none;
+    padding:10px 20px;
+    cursor:pointer;
+    border-radius:5px;
+    font-weight:bold;
+}
 
-        .precio {
-            font-size: 1.3em;
-            font-weight: bold;
-            margin: 10px 0;
-        }
+button:hover{
+    background:#1f7fd1;
+    color:#fff;
+}
 
-        button {
-            background: #3fa9f5;
-            color: #000000;
-            border: none;
-            padding: 12px 25px;
-            font-size: 1em;
-            cursor: pointer;
-            border-radius: 6px;
-        }
+.carrito{
+    background:#141414;
+    padding:20px;
+    border-radius:10px;
+    margin-top:30px;
+}
 
-        button:hover {
-            background: #1f7fd1;
-            color: #ffffff;
-        }
-
-        .extra {
-            display: none;
-            margin-top: 15px;
-            background: #2a2a2a;
-            padding: 15px;
-            border-radius: 8px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            background: #0a0a0a;
-            color: #aaaaaa;
-            font-size: 0.9em;
-        }
-    </style>
+footer{
+    text-align:center;
+    padding:20px;
+    background:#000;
+    color:#aaa;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>Accesorios Fercho</h1>
-    <p>Accesorios de computadora de alta calidad 💻🔥</p>
+<h1>Accesorios Fercho</h1>
+<p>Compra rápido y fácil por WhatsApp 💻📲</p>
 </header>
 
 <div class="container">
 
-    <div class="producto">
-        <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04" alt="Teclado mecánico">
-        <h2>Teclado Mecánico RGB</h2>
-        <p class="precio">Q 399.00</p>
-        <button onclick="toggle('p1')">Ver más opciones</button>
-        <div class="extra" id="p1">
-            <ul>
-                <li>✔ Switch azul / rojo / café</li>
-                <li>✔ RGB personalizable</li>
-                <li>✔ USB y Bluetooth</li>
-            </ul>
-        </div>
-    </div>
+<div class="producto">
+<h2>Teclado Mecánico RGB</h2>
+<p class="precio">Q399</p>
+<button onclick="agregar('Teclado Mecánico RGB',399)">Agregar al carrito</button>
+</div>
 
-    <div class="producto">
-        <img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6" alt="Mouse gamer">
-        <h2>Mouse Gamer</h2>
-        <p class="precio">Q 249.00</p>
-        <button onclick="toggle('p2')">Ver más opciones</button>
-        <div class="extra" id="p2">
-            <ul>
-                <li>✔ DPI ajustable</li>
-                <li>✔ Iluminación LED</li>
-                <li>✔ Diseño ergonómico</li>
-            </ul>
-        </div>
-    </div>
+<div class="producto">
+<h2>Mouse Gamer</h2>
+<p class="precio">Q249</p>
+<button onclick="agregar('Mouse Gamer',249)">Agregar al carrito</button>
+</div>
 
-    <div class="producto">
-        <img src="https://images.unsplash.com/photo-1580894908361-967195033215" alt="Auriculares gamer">
-        <h2>Auriculares con Micrófono</h2>
-        <p class="precio">Q 299.00</p>
-        <button onclick="toggle('p3')">Ver más opciones</button>
-        <div class="extra" id="p3">
-            <ul>
-                <li>✔ Sonido envolvente</li>
-                <li>✔ Micrófono ajustable</li>
-                <li>✔ Cancelación de ruido</li>
-            </ul>
-        </div>
-    </div>
+<div class="producto">
+<h2>Auriculares con Micrófono</h2>
+<p class="precio">Q299</p>
+<button onclick="agregar('Auriculares con Micrófono',299)">Agregar al carrito</button>
+</div>
 
-    <div class="producto">
-        <img src="https://images.unsplash.com/photo-1587825140708-5a4b1cbbda7c" alt="Webcam HD">
-        <h2>Webcam HD</h2>
-        <p class="precio">Q 199.00</p>
-        <button onclick="toggle('p4')">Ver más opciones</button>
-        <div class="extra" id="p4">
-            <ul>
-                <li>✔ 1080p</li>
-                <li>✔ Micrófono integrado</li>
-                <li>✔ Plug & Play</li>
-            </ul>
-        </div>
-    </div>
+<div class="producto">
+<h2>Webcam HD</h2>
+<p class="precio">Q199</p>
+<button onclick="agregar('Webcam HD',199)">Agregar al carrito</button>
+</div>
 
-    <div class="producto">
-        <img src="https://images.unsplash.com/photo-1616628182504-4a21b13d53d6" alt="Base enfriadora">
-        <h2>Base Enfriadora para Laptop</h2>
-        <p class="precio">Q 179.00</p>
-        <button onclick="toggle('p5')">Ver más opciones</button>
-        <div class="extra" id="p5">
-            <ul>
-                <li>✔ Ventiladores silenciosos</li>
-                <li>✔ Altura ajustable</li>
-                <li>✔ LED azul</li>
-            </ul>
-        </div>
-    </div>
+<div class="producto">
+<h2>Base Enfriadora Laptop</h2>
+<p class="precio">Q179</p>
+<button onclick="agregar('Base Enfriadora Laptop',179)">Agregar al carrito</button>
+</div>
 
-    <div class="producto">
-        <img src="https://images.unsplash.com/photo-1580910051074-7cbe8d8c1b3a" alt="Memoria USB">
-        <h2>Memoria USB</h2>
-        <p class="precio">Desde Q 79.00</p>
-        <button onclick="toggle('p6')">Ver más opciones</button>
-        <div class="extra" id="p6">
-            <ul>
-                <li>✔ 16GB / 32GB / 64GB</li>
-                <li>✔ USB 3.0</li>
-                <li>✔ Alta velocidad</li>
-            </ul>
-        </div>
-    </div>
+<div class="producto">
+<h2>Memoria USB</h2>
+<p class="precio">Q79</p>
+<button onclick="agregar('Memoria USB',79)">Agregar al carrito</button>
+</div>
+
+<div class="carrito">
+<h2>🛒 Carrito</h2>
+<div id="lista"></div>
+<p id="total">Total: Q0</p>
+<button onclick="comprar()">Comprar por WhatsApp</button>
+</div>
 
 </div>
 
 <footer>
-    © 2026 Accesorios Fercho | Tecnología que se nota ⚪🔵⚫
+© 2026 Accesorios Fercho | Venta directa y segura 🔵⚪⚫
 </footer>
 
 <script>
-    function toggle(id) {
-        const box = document.getElementById(id);
-        box.style.display = box.style.display === "block" ? "none" : "block";
-    }
+let carrito=[];
+let total=0;
+
+function agregar(nombre,precio){
+    carrito.push({nombre,precio});
+    total+=precio;
+    mostrar();
+}
+
+function mostrar(){
+    let lista=document.getElementById("lista");
+    lista.innerHTML="";
+    carrito.forEach(p=>{
+        lista.innerHTML+=`<p>✔ ${p.nombre} - Q${p.precio}</p>`;
+    });
+    document.getElementById("total").innerText="Total: Q"+total;
+}
+
+function comprar(){
+    let mensaje="Hola, quiero comprar:%0A";
+    carrito.forEach(p=>{
+        mensaje+=`- ${p.nombre} Q${p.precio}%0A`;
+    });
+    mensaje+=`Total: Q${total}`;
+
+    // 🔴 CAMBIA ESTE NÚMERO POR EL TUYO
+    let numero="50212345678";
+
+    window.open(`https://wa.me/${numero}?text=${mensaje}`,"_blank");
+}
 </script>
 
 </body>
